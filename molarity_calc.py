@@ -34,6 +34,24 @@ with tabs[0]:
     with col1_2:
         freq_units = st.selectbox("", ("M", "%wt", "% v/v", "% w/v"), key="u_freq")
 
+    col2_1, col2_2 = st.columns([2, 1])
+    with col2_1:
+        freq = st.selectbox("Compounds", ("sodium dodecyl sulfate", "x", "y", "z"), key="u_freq2")
+
+    col3_1, col3_2 = st.columns([2, 1])
+    with col3_1:
+        freq = st.text_input(
+            "Formula weight (molar  mass)", value="", help="Enter desired weight/molar mass"
+        )
+
+    col4_1, col4_2 = st.columns([2, 1])
+    with col4_1:
+        freq = st.text_input(
+            "Density", value="", help="Enter desired density"
+        )
+    with col4_2:
+        freq_units = st.selectbox("", ("g/cm^3", "kg/m^3"), key="u_freq3")
+
     st.markdown(f"$CSC_{{50mV/s}} = {50:.2f}\,uC$")
     st.markdown(f"$CSC_{{200mV/s}} = {50:.2f}\,uC$")
 
